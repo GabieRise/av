@@ -43,23 +43,30 @@ function App() {
   };
 
   if (accepted) {
-    return (
-      <div className="container">
-        <h1>🎉 SUCCESS 🎉</h1>
-        <h2>Toviyah’s Aunt said YES 😎💖</h2>
-        <p>
-          Decision status:
-          <br />
-          ✔️ Excellent  
-          ✔️ Correct  
-          ✔️ Sensational 
-          ✔️ I love You Neoooo
+  return (
+    <div className="container">
+      <h1>💖 SHE SAID YES 💖</h1>
+      <h2>Toviyah’s Aunt 🥰</h2>
 
-        </p>
-        <p className="signature">— Valentine locked in 🔒😂</p>
-      </div>
-    );
-  }
+      <p>
+        I know this was goofy…  
+        <br />
+        but my feelings for you are very real ❤️
+        <br /><br />
+        You make life lighter, funnier,  
+        and honestly a lot more beautiful.
+        <br /><br />
+        Thank you for choosing me today  
+        and every day after this 💕
+      </p>
+
+      <p className="signature">
+        — Yours, with all my heart 💘
+      </p>
+    </div>
+  );
+}
+
 
   return (
     <div className="container" onClick={startMusic}>
