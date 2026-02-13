@@ -44,27 +44,41 @@ function App() {
 
   if (accepted) {
   return (
-    <div className="container">
-      <h1>💖 SHE SAID YES 💖</h1>
-      <h2>Toviyah’s Aunt 🥰</h2>
+  <div className="container" onClick={startMusic}>
+    {/* 🎵 Audio stays mounted */}
+    <audio ref={audioRef} loop>
+      <source src="/goofy.mp3" type="audio/mpeg" />
+    </audio>
 
-      <p>
-        I know this was goofy…  
-        <br />
-        but my feelings for you are very real ❤️
-        <br /><br />
-        You make life lighter, funnier,  
-        and honestly a lot more beautiful.
-        <br /><br />
-        Thank you for choosing me today  
-        and every day after this 💕
-      </p>
+    {accepted ? (
+      /* YES SCREEN */
+      <div className="container">
+        <h1>💖 SHE SAID YES 💖</h1>
+        <h2>Toviyah’s Aunt 🥰</h2>
 
-      <p className="signature">
-        — Yours, with all my heart 💘
-      </p>
-    </div>
-  );
+        <p>
+          I know this was goofy…
+          <br />
+          but my feelings for you are very real ❤️
+          <br /><br />
+          You make life lighter, funnier,
+          <br />
+          and a lot more beautiful.
+        </p>
+
+        <p className="signature">
+          — Yours, with all my heart 💘
+        </p>
+      </div>
+    ) : (
+      /* QUESTION SCREEN */
+      <>
+        {/* buttons + chaos */}
+      </>
+    )}
+  </div>
+);
+
 }
 
 
