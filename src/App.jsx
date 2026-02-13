@@ -89,6 +89,9 @@ function App() {
         <source src="/romantic.mp3" type="audio/mpeg" />
       </audio>
 
+    {/* 💕 Floating Love Emojis */}
+      <FloatingLove />
+
       <h1>💘 ATTENTION 💘</h1>
       <h2>Toviyah’s Aunt, will you be my Valentine?</h2>
 
@@ -116,5 +119,17 @@ function App() {
     </div>
   );
 }
+function FloatingLove() {
+  return (
+    <div className="love-container">
+      {[...Array(25)].map((_, i) => (
+        <span key={i} className="love">
+          💖
+        </span>
+      ))}
+    </div>
+  );
+}
+
 
 export default App;
