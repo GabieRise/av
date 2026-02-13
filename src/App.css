@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Comic Sans MS", "Poppins", sans-serif;
+  background: radial-gradient(circle, #ffecd2, #fcb69f);
+  overflow: hidden; /* prevent screen shaking on mobile */
+}
+
+.container {
+  min-height: 100vh;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* TEXT SCALES NICELY ON ALL SCREENS */
+h1 {
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+}
+
+h2 {
+  margin: 12px 0 20px;
+  font-size: clamp(1.2rem, 4.5vw, 1.6rem);
+}
+
+/* WARNING TEXT */
+.warning {
+  min-height: 28px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #b30000;
+}
+
+/* SCREAM SHAKE */
+.warning.scream {
+  animation: shake 0.4s;
+}
+
+/* BUTTON LAYOUT */
+.buttons {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* BUTTON BASE */
+button {
+  padding: 14px 24px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+  touch-action: manipulation;
+  min-width: 120px;
+}
+
+/* YES BUTTON */
+.yes {
+  background: #ff2e63;
+  color: white;
+  z-index: 2;
+}
+
+/* NO BUTTON */
+.no {
+  background: #333;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+/* ROTATING NO BUTTON */
+.no.spin {
+  animation: spin 0.4s linear;
+}
+
+/* SUCCESS SCREEN */
+.signature {
+  margin-top: 20px;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* EXTRA SMALL PHONES */
+@media (max-width: 360px) {
+  .buttons {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+/* ANIMATIONS */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
